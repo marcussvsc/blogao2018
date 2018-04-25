@@ -1,0 +1,12 @@
+
+<%= title "Homepage_Blogao"%>
+
+
+<% @posts.each do |post| %>
+
+  <h2>Title: <%= post.title%></h2>
+  <h3>Subject: <%= post.subject%></h3>
+  <p>Text: <%= postText( post.text) %></p>
+<strong>Author <%= post.author.name %> </strong>
+  <hr/>
+<% end %>

@@ -7,6 +7,14 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+
+# buscar todos os posts do banco
+  def homepage
+
+    @posts = Post.all
+
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
@@ -36,6 +44,8 @@ class PostsController < ApplicationController
       end
     end
   end
+
+
 
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json

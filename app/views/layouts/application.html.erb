@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blogao</title>
     <%= csrf_meta_tags %>
 
@@ -9,7 +10,10 @@
   </head>
 
   <body>
+
   <%= render 'layouts/menu'%>
+  <div class="container-fluid">
     <%= yield %>
+  </div>
   </body>
 </html>
