@@ -82,22 +82,3 @@ div {
 label {
   display: block;
 }
-
-.menu {
-  list-style:none;
-  border:1px solid #c0c0c0;
-  float:left;
-
-}
-.menu li{
-  position:relative;
-  float:left;
-  border-right:1px solid #c0c0c0;
-}
-.menu li  ul{
-  position:absolute;
-  top:25px;
-  left:0;
-  background-color:#fff;
-  display:none;
-}

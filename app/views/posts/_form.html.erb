@@ -21,6 +21,11 @@
   </div>
 
   <div class="form-group">
+    <%= form.label :category_id %>
+    <%= form.select :category_id, Category.all.collect {|category| [category.description, category.id]}, {}, {class: 'form-control'} %>
+  </div>
+
+  <div class="form-group">
     <%= form.label :subject %>
     <%= form.text_field :subject, id: :post_subject, class:'form-control' %>
   </div>
@@ -31,6 +36,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :Submit, class: 'btn btn-default'%>
   </div>
 <% end %>

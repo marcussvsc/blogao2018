@@ -11,7 +11,9 @@ class PostsController < ApplicationController
 # buscar todos os posts do banco
   def homepage
 
-    @posts = Post.all
+    @posts = Post.recents.order("created_at desc")
+    @posts = @posts.where(category: params[:category_id]) unless params[:category_id].blank?
+    @posts = @posts.where("UPPER(text) like ?", "%#{params[:search_term].to_s.upcase}%") unless params[:search_term].blank?
 
   end
 
@@ -79,6 +81,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:text, :subject, :title, :author_id)
+      params.require(:post).permit(:text, :subject, :title, :author_id, :category_id)
     end
 end
